@@ -1,0 +1,57 @@
+import { InterceptEvent } from './types';
+
+export const recentIntercepts: InterceptEvent[] = [
+  {
+    id: '1',
+    type: 'call',
+    phoneNumber: '+1 (800) 555-0199',
+    timestamp: 'Just now',
+    threatLevel: 'critical',
+    confidenceScore: 99.8,
+    aiAnalysis: 'Known IRS scam signature detected in audio payload preview.',
+    actionTaken: 'blocked',
+  },
+  {
+    id: '2',
+    type: 'sms',
+    phoneNumber: '+1 (415) 555-0132',
+    timestamp: '2m ago',
+    threatLevel: 'high',
+    confidenceScore: 94.2,
+    aiAnalysis: 'Phishing URL detected mimicking Bank of America login.',
+    actionTaken: 'blocked',
+    contentPreview: 'Your B0A account is locked. Please verify at bnk-amer-update.com',
+  },
+  {
+    id: '3',
+    type: 'call',
+    phoneNumber: '+1 (212) 555-0187',
+    timestamp: '15m ago',
+    threatLevel: 'medium',
+    confidenceScore: 78.5,
+    aiAnalysis: 'Telemarketer pattern matched involving Solar Installation.',
+    actionTaken: 'flagged',
+  },
+  {
+    id: '4',
+    type: 'sms',
+    phoneNumber: '844-555-0191',
+    timestamp: '1h ago',
+    threatLevel: 'critical',
+    confidenceScore: 98.9,
+    aiAnalysis: 'Social engineering attack: fake package delivery notification.',
+    actionTaken: 'blocked',
+    contentPreview: 'USPS: Package 4901 is pending delivery. Click here to pay fee...',
+  },
+  {
+    id: '5',
+    type: 'call',
+    phoneNumber: '+1 (310) 555-0155',
+    contactName: 'Local Pharmacy',
+    timestamp: '2h ago',
+    threatLevel: 'safe',
+    confidenceScore: 2.1,
+    aiAnalysis: 'Verified business number. No spam indicators.',
+    actionTaken: 'allowed',
+  }
+];
