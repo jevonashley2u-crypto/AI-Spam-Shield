@@ -15,21 +15,25 @@ export function NavigationBar({ activeTab, onTabChange }: Props) {
   ];
 
   return (
-    <div className="absolute bottom-0 inset-x-0 h-24 bg-cyber-900/90 backdrop-blur-xl border-t border-white/10 z-50 px-6 pb-6 pt-3 flex justify-between items-center text-slate-400">
+    <div className="absolute bottom-0 inset-x-0 h-28 bg-cyber-900/95 backdrop-blur-xl border-t border-white/10 z-50 px-6 pb-8 pt-4 flex justify-between items-center text-slate-400">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         return (
           <button
             key={tab.id}
             onClick={() => onTabChange(tab.id)}
-            className={`flex flex-col items-center gap-1 transition-colors duration-300 ${
-              isActive ? 'text-accent-neon' : 'hover:text-slate-200'
+            className={`flex flex-col items-center gap-1.5 transition-all duration-300 transform active:scale-95 ${
+              isActive ? 'text-accent-neon scale-105' : 'hover:text-slate-100 hover:scale-105'
             }`}
           >
-            <div className={`p-1.5 rounded-full transition-all duration-300 ${isActive ? 'bg-accent-neon/10' : ''}`}>
-               {tab.icon}
+            <div className={`p-2 rounded-full transition-all duration-300 ${isActive ? 'bg-accent-neon/15 shadow-[0_0_15px_rgba(14,165,233,0.3)]' : ''}`}>
+               {/* Increased icon size from w-6 to w-7 */}
+               <div className="scale-125">
+                 {tab.icon}
+               </div>
             </div>
-            <span className="text-[10px] font-medium tracking-wide uppercase">{tab.label}</span>
+            {/* Increased font size and font weight for readability */}
+            <span className="text-[12px] font-bold tracking-widest uppercase">{tab.label}</span>
           </button>
         );
       })}

@@ -15,8 +15,8 @@ export function PhoneMockup({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="flex justify-center text-slate-200 shrink-0">
-      <div className="relative w-full w-[380px] sm:w-[400px] h-[800px] bg-cyber-900 rounded-[3rem] border-[8px] border-slate-900 overflow-hidden shadow-2xl shadow-sky-900/20 flex flex-col font-sans ring-1 ring-white/10">
+    <div className="flex justify-center text-slate-200 shrink-0 lg:scale-110 lg:transform-origin-center transition-transform">
+      <div className="relative w-[380px] sm:w-[420px] h-[850px] bg-cyber-900 rounded-[3rem] border-[8px] border-slate-900 overflow-hidden shadow-2xl shadow-sky-900/20 flex flex-col font-sans ring-1 ring-white/10">
         {/* Dynamic Island / Notch Mockup */}
         <div className="absolute top-0 inset-x-0 h-7 flex justify-center z-50">
           <div className="w-32 h-6 bg-black rounded-b-3xl"></div>
@@ -33,7 +33,7 @@ export function PhoneMockup({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Dynamic App Content */}
-        <div className="flex-1 relative overflow-y-auto no-scrollbar pb-24">
+        <div className="flex-1 relative overflow-y-auto no-scrollbar pb-32">
           {children}
         </div>
       </div>
